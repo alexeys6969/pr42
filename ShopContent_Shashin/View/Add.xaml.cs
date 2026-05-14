@@ -1,4 +1,5 @@
-﻿using ShopContent_Shashin.ViewModell;
+﻿using ShopContent_Shashin.Modell;
+using ShopContent_Shashin.ViewModell;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,14 +16,18 @@ using System.Windows.Shapes;
 namespace ShopContent_Shashin.View
 {
     /// <summary>
-    /// Логика взаимодействия для Main.xaml
+    /// Логика взаимодействия для Add.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class Add : Page
     {
-        public Main()
+        public Add(object Context)
         {
             InitializeComponent();
-            DataContext = new VMItems();
+            DataContext = new
+            {
+                item = Context,
+                categorys = new VMCategorys()
+            };
         }
     }
 }

@@ -72,7 +72,7 @@ namespace ShopContent_Shashin.Context
                     $"Id = {this.Id}", out conn);
             }
             Connection.CloseConnection(conn);
-            MainWindow.init.frame.Navigate(MainWindow.init.Main);
+            MainWindow.init.frame.Navigate(new View.Main());
         }
 
         public void Delete()
@@ -90,7 +90,7 @@ namespace ShopContent_Shashin.Context
             {
                 return new RelayCommand(obj =>
                 {
-                    MainWindow.init.frame.Navigate();
+                    MainWindow.init.frame.Navigate(new View.Add(this));
                 });
             }
         }
@@ -115,7 +115,7 @@ namespace ShopContent_Shashin.Context
                 {
                     Delete();
                     (MainWindow.init.Main.DataContext as ViewModell.VMItems).Items.Remove(this);
-                })
+                });
             }
         }
     }
