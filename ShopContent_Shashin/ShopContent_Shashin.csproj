@@ -7,10 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ic_box.png" />
+    <None Remove="Images\ic_shop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Modell\" />
     <Folder Include="ViewModell\" />
     <Folder Include="Context\" />
-    <Folder Include="Classes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ic_box.png" />
+    <Resource Include="Images\ic_shop.png" />
   </ItemGroup>
 
 </Project>
